@@ -56,7 +56,6 @@
 				4B8B2B2A85EF03189E2208C3 /* Pods-MovieTMDB.debug.xcconfig */,
 				758F570BD5D1516137E9ABDB /* Pods-MovieTMDB.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

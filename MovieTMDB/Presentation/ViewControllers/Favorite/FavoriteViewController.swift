@@ -1,5 +1,5 @@
 //
-//  DashboardViewController.swift
+//  FavoriteViewController.swift
 //  MovieTMDB
 //
 //  Created by Yosafat.H.S on 04/11/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DashboardViewController: UITabBarController {
+class FavoriteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

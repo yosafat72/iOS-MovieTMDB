@@ -13,6 +13,22 @@ class SplashScreenViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+            self.navigateToDashboardScreen()
+        }
+        
+    }
+    
+    private func navigateToDashboardScreen() {
+        let dashboard = DashboardTabBarController()
+
+       
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = dashboard
+            window.makeKeyAndVisible()
+        }
     }
 
 

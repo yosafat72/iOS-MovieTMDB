@@ -18,6 +18,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
         
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.backgroundColor = .systemGray6
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+                
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        
         let window = UIWindow(windowScene: scene)
         window.rootViewController = SplashScreenViewController()
         window.makeKeyAndVisible()

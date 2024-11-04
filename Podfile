@@ -6,5 +6,11 @@ target 'MovieTMDB' do
   use_frameworks!
 
   # Pods for MovieTMDB
+  pod 'Alamofire', '~> 5.6'
+  pod 'RxSwift', '~> 6.5'
+  pod 'RxCocoa', '~> 6.5'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'Swinject', '~> 2.7'
+  pod 'SwiftyJSON', '~> 5.0'
 
 end

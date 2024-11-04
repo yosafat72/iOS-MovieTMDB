@@ -18,7 +18,13 @@ class DashboardTabBarController: UITabBarController {
     
     private func configTabs(){
         
-        let homeVC = HomeViewController()
+        //Inject Manual
+        let movieService = MovieServiceImpl()
+        let movieRepository = MovieRepositoryImpl(movieService: movieService)
+        let fetchPopularMovieUseCase = FetchPopularMovieUseCase(repository: movieRepository)
+        let homeViewModel = HomeViewModel(fetchPopularMovieUseCase: fetchPopularMovieUseCase)
+        
+        let homeVC = HomeViewController(viewModel: homeViewModel)
         let favoriteVC = FavoriteViewController()
         let profileVC = ProfileViewController()
         

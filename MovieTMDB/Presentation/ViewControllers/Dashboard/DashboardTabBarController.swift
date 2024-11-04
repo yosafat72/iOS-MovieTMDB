@@ -22,7 +22,7 @@ class DashboardTabBarController: UITabBarController {
         let movieService = MovieServiceImpl()
         let movieRepository = MovieRepositoryImpl(movieService: movieService)
         let fetchPopularMovieUseCase = FetchPopularMovieUseCase(repository: movieRepository)
-        let homeViewModel = HomeViewModel(fetchPopularMovieUseCase: fetchPopularMovieUseCase)
+        _ = HomeViewModel(fetchPopularMovieUseCase: fetchPopularMovieUseCase)
         
         //Auto Inject
         let homeViewModelDI = DependencyContainer.shared.resolve(HomeViewModel.self)!

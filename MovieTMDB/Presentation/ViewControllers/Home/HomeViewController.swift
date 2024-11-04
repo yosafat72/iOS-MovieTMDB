@@ -41,12 +41,11 @@ class HomeViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.errorMessage
-                    .observe(on: MainScheduler.instance)
-                    .subscribe(onNext: { [weak self] message in
-                        // Handle error, e.g., show an alert
-                        print(message) // You can show this in an alert or label
-                    })
-                    .disposed(by: disposeBag)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] message in
+                print(message)
+            })
+            .disposed(by: disposeBag)
     }
 
 }

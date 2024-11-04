@@ -24,10 +24,13 @@ class DashboardTabBarController: UITabBarController {
         let fetchPopularMovieUseCase = FetchPopularMovieUseCase(repository: movieRepository)
         let homeViewModel = HomeViewModel(fetchPopularMovieUseCase: fetchPopularMovieUseCase)
         
-        let homeVC = HomeViewController(viewModel: homeViewModel)
+        //Auto Inject
+        let homeViewModelDI = DependencyContainer.shared.resolve(HomeViewModel.self)!
+        
+        let homeVC = HomeViewController(viewModel: homeViewModelDI)
         let favoriteVC = FavoriteViewController()
         let profileVC = ProfileViewController()
-        
+    
         homeVC.title = "Home"
         favoriteVC.title = "Favorite"
         profileVC.title = "Profile"
